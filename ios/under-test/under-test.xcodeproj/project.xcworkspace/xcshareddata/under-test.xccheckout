@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3E99B2F1-5D5C-41A5-B66F-A838D97783BA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>under-test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9F3E7A6CF5121B2028FB47EEE6348F08A7AE06C9</key>
+		<string>https://github.com/iroth/appium-ios-python-e2e-tests.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/under-test/under-test.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9F3E7A6CF5121B2028FB47EEE6348F08A7AE06C9</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iroth/appium-ios-python-e2e-tests.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9F3E7A6CF5121B2028FB47EEE6348F08A7AE06C9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9F3E7A6CF5121B2028FB47EEE6348F08A7AE06C9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>appium-ios-python-e2e-tests</string>
+		</dict>
+	</array>
+</dict>
+</plist>
