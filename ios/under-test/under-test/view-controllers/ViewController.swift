@@ -12,6 +12,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 
     @IBOutlet var collectionView: UICollectionView?
 
+    let model = ProductListModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,15 +40,16 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return model.itemsCount
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCell", forIndexPath: indexPath) as ProductCollectionViewCell
-        cell.textLabel?.text = "p\(indexPath.row+1)"
+        var product: ProductModel
+        product = model.itemForRow(indexPath.row)
+        cell.textLabel?.text = product.name
         return cell
     }
     
-
 }
 
