@@ -14,13 +14,9 @@ from subprocess import call
 class ProductListTests(unittest.TestCase):
 
     def setUp(self):
-
-        # launch fake api server
-        call("python -m SimpleHTTPServer &", shell=True)
+        return
 
     def tearDown(self):
-        # kill fake api server
-        call("pkill -f SimpleHTTPServer", shell=True)
         # quit appium web driver
         self.driver.quit()
 
@@ -28,16 +24,15 @@ class ProductListTests(unittest.TestCase):
         out = {
                 'products' : products
                 }
-        f = open('api_mock/product_list.json', 'w')
+        f = open('api/product_list.json', 'w')
         f.write(json.dumps(out))
         f.close()
         return
 
     def navigate_to_product_list_screen(self):
-        # set up appium
         app = os.path.join(os.path.dirname(__file__),
-                           '../ios/under-test/Build/Release-iphonesimulator',
-                           'under-test.app')
+                          os.environ['UNDER_TEST_REL_PATH'],
+                          os.environ['UNDER_TEST_APP_FILE'])
         app = os.path.abspath(app)
         self.driver = webdriver.Remote(
                                       command_executor='http://127.0.0.1:4723/wd/hub',
@@ -56,7 +51,7 @@ class ProductListTests(unittest.TestCase):
     
     def test_product_list_populated(self):
         
-        test_product_list = ["Red Shoes", "Blue Velvet"]
+        test_product_list = ["Red Shoes", "Blue Shirts"]
         self.given_a_store_with_products(test_product_list)
 
         self.navigate_to_product_list_screen()

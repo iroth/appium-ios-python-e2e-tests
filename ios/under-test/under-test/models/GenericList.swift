@@ -1,12 +1,12 @@
 //
-//  GenericListDataSource.swift
+//  GenericList.swift
 //  under-test
 //
 //  Created by Israel Roth on 11/5/14.
 //  Copyright (c) 2014 Israel Roth. All rights reserved.
 //
 
-class GenericListDataSource<T> {
+class GenericList<T> {
     var items = [T]()
     var itemsCount: Int {
         get {

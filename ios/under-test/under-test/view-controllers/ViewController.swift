@@ -57,7 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCell", forIndexPath: indexPath) as ProductCollectionViewCell
-        var product: ProductModel
+        var product: Product
         if modelLoaded {
             product = model!.itemForRow(indexPath.row)
             cell.textLabel?.text = product.name
