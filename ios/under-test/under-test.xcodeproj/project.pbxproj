@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3E36711A0A395800829C64 /* StoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3E36701A0A395800829C64 /* StoreAPI.swift */; };
+		EB65DBFD1A0A5E87008A053C /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB65DBFC1A0A5E87008A053C /* Alamofire.swift */; };
 		EB79631A1A0992FA0063593F /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7963191A0992FA0063593F /* ProductModel.swift */; };
 		EB79631C1A09944E0063593F /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79631B1A09944E0063593F /* ProductListModel.swift */; };
 		EBD7C0E21A08CC6D00A99CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7C0E11A08CC6D00A99CD1 /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB3E36701A0A395800829C64 /* StoreAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAPI.swift; sourceTree = "<group>"; };
+		EB65DBFC1A0A5E87008A053C /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		EB7963191A0992FA0063593F /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		EB79631B1A09944E0063593F /* ProductListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		EBD7C0DC1A08CC6D00A99CD1 /* under-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "under-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB3E366F1A0A395800829C64 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				EB65DBFC1A0A5E87008A053C /* Alamofire.swift */,
+				EB3E36701A0A395800829C64 /* StoreAPI.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		EBD7C0D31A08CC6D00A99CD1 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +98,7 @@
 		EBD7C0DE1A08CC6D00A99CD1 /* under-test */ = {
 			isa = PBXGroup;
 			children = (
+				EB3E366F1A0A395800829C64 /* services */,
 				EBD7C1081A098A8A00A99CD1 /* models */,
 				EBD7C1051A08CD1200A99CD1 /* views */,
 				EBD7C1021A08CD0A00A99CD1 /* view-controllers */,
@@ -250,10 +264,12 @@
 			files = (
 				EBD7C1041A08CD0A00A99CD1 /* ViewController.swift in Sources */,
 				EBD7C1071A08CD1200A99CD1 /* ProductCollectionViewCell.swift in Sources */,
+				EB65DBFD1A0A5E87008A053C /* Alamofire.swift in Sources */,
 				EBD7C1101A09913A00A99CD1 /* GenericListDataSource.swift in Sources */,
 				EB79631C1A09944E0063593F /* ProductListModel.swift in Sources */,
 				EBD7C0E21A08CC6D00A99CD1 /* AppDelegate.swift in Sources */,
 				EB79631A1A0992FA0063593F /* ProductModel.swift in Sources */,
+				EB3E36711A0A395800829C64 /* StoreAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

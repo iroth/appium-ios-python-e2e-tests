@@ -11,12 +11,19 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     @IBOutlet var collectionView: UICollectionView?
+    var modelLoaded = false
+    var model : ProductListModel?
 
-    let model = ProductListModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.model = ProductListModel(loaded: {
+            self.modelLoaded = true
+            self.collectionView!.reloadData()
+            },
+            error: { (code: Int) in
+        })
+
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 320, height: 90)
@@ -40,14 +47,21 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.itemsCount
+        if modelLoaded {
+            return model!.itemsCount
+        }
+        else {
+            return 0
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCell", forIndexPath: indexPath) as ProductCollectionViewCell
         var product: ProductModel
-        product = model.itemForRow(indexPath.row)
-        cell.textLabel?.text = product.name
+        if modelLoaded {
+            product = model!.itemForRow(indexPath.row)
+            cell.textLabel?.text = product.name
+        }
         return cell
     }
     

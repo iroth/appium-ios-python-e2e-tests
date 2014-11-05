@@ -8,10 +8,20 @@
 
 class ProductListModel {
     var dataSource = GenericListDataSource<ProductModel>()
+    let storeApi = StoreAPI()
     
-    init() {
-        dataSource.addItem(ProductModel(name: "p1"))
-        dataSource.addItem(ProductModel(name: "p2"))
+    init(loaded: () -> (), error: (Int) -> ()) {
+        storeApi.getProductList({ (prodList: [String], resultCode: Int) in
+            if resultCode == 200 {
+                for p in prodList {
+                    self.dataSource.addItem(ProductModel(name: p))
+                }
+                loaded()
+            }
+            else {
+                error(resultCode)
+            }
+        })
     }
 
     var itemsCount: Int {
