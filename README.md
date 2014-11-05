@@ -3,6 +3,9 @@ appium-ios-python-e2e-tests
 ## Prerequisites
 * Setup xcode
 * Install sdks + simulators
+* make sure pip and virtualenv are installed:
+sudo easy_install pip
+sudo pip install virtualenv
 
 ## Building and running:
 1. setup the build directory to be relative to the workspace (under file/project settings, pick advanced and set relative to workspace)

@@ -50,16 +50,13 @@ class ProductListTests(unittest.TestCase):
         return
     
     def screen_product_list(self):
-#        cells = self.driver.find_element_by_accessibility_id('ProductList').elements()
         cells = self.driver.find_elements_by_xpath('//UIACollectionView/UIACollectionCell/UIAStaticText')
-
-#        cells = self.driver.find_elements_by_ios_uiautomation('collectionViews[0].cells()')
         product_names = map(lambda c: c.text, cells)
         return product_names
     
     def test_product_list_populated(self):
         
-        test_product_list = ["Product Uno", "Prod 2"]
+        test_product_list = ["Red Shoes", "Blue Velvet"]
         self.given_a_store_with_products(test_product_list)
 
         self.navigate_to_product_list_screen()
