@@ -7,14 +7,14 @@
 //
 
 class ProductListModel {
-    var dataSource = GenericListDataSource<ProductModel>()
+    var items = GenericList<Product>()
     let storeApi = StoreAPI()
     
     init(loaded: () -> (), error: (Int) -> ()) {
         storeApi.getProductList({ (prodList: [String], resultCode: Int) in
             if resultCode == 200 {
                 for p in prodList {
-                    self.dataSource.addItem(ProductModel(name: p))
+                    self.items.addItem(Product(name: p))
                 }
                 loaded()
             }
@@ -26,12 +26,12 @@ class ProductListModel {
 
     var itemsCount: Int {
         get {
-            return dataSource.itemsCount
+            return items.itemsCount
         }
     }
     
-    func itemForRow(row: Int) -> ProductModel {
-        return dataSource.itemForRow(row)
+    func itemForRow(row: Int) -> Product {
+        return items.itemForRow(row)
     }
 
 }

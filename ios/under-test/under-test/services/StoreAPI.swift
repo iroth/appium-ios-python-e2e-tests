@@ -12,7 +12,7 @@ typealias listCompletionCallback = ([String], Int)->()
 class StoreAPI {
 
     func getProductList(completion: listCompletionCallback) {
-        request(.GET, "http://localhost:8000/api_mock/product_list.json").responseJSON { (_, _, JSON, _) in
+        request(.GET, "http://localhost:8000/api/product_list.json").responseJSON { (_, _, JSON, _) in
             println(JSON)
             if JSON != nil {
                 let jsonResult = JSON as? Dictionary<String, AnyObject>
