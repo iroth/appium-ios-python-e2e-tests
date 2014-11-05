@@ -13,7 +13,7 @@ source ios-e2e/bin/activate
 pip install -r ./requirements.txt
 
 # run e2es
-python e2e.py
+nosetests
 
 # shut down
 /bin/bash node-kill.sh appium
