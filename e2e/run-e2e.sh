@@ -8,8 +8,8 @@ appium-doctor --ios
 appium &
 
 # setup python
-virtualenv ios-e2e
-source ios-e2e/bin/activate
+virtualenv ios-e2e-venv
+source ios-e2e-venv/bin/activate
 pip install -r ./requirements.txt
 
 # build xcode project of under test app
@@ -31,4 +31,5 @@ nosetests
 # shut down
 /bin/bash node-kill.sh appium
 deactivate
+rm -rf ios-e2e-venv
 pkill -f SimpleHTTPServer
